@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Arena</title>
+    <meta name="description" content="">
+    
+</head>
+<body>
+    <h1>Curso de Juego</h1>
+    <h2>John Quezada</h2>
+    <script type="text/javascript" src="phaser/phaser-arcade-physics.js"></script>
+    <script type="text/javascript" src="paginas/Nivel1.js"></script>
+    <style>
+        #canvas{
+            border: 1px dashed red;
+            height: 500px;
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+
+    <script>
+        const config={
+            type:Phaser.AUTO,
+            with:600,
+            height:600,
+            parent:'canvas',
+            scene:Nivel1,
+            physics:{
+                default:'arcade',
+                arcade:{
+                    debug:false,
+                    gravity:{y:200}
+                }
+            }
+        }
+        const game=new Phaser.Game(config);
+    </script>
+</body>
+</html>
