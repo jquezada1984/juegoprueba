@@ -22,5 +22,16 @@ class Nivel1 extends Phaser.Scene{
         this.gato.setBounce(0.2);
         this.gato.setCollideWorldBounds(true);
         this.physics.add.collider(this.gato,this.suelos);
+        this.cursor=this.input.keyboard.createCursorKeys();
+    }
+
+    update(){
+        if(this.cursor.left.isDown){
+            console.log('hey');
+            this.gato.setVelocityX(-160);
+        }
+        else{
+            this.gato.setVelocityX(0);
+        }
     }
 }
